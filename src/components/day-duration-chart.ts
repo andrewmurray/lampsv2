@@ -1,19 +1,19 @@
-import {Component, ViewContainerRef} from '@angular2/core';
+import {Component, ViewChild} from '@angular2/core';
 import * as d3 from 'd3';
 
 @Component({
   selector: "day-duration-chart",
-  template: '<ng-content/>'
+  template: '<div #container></div>'
 })
 export default class DayDurationChart {
+  @ViewChild('container') container;
   private host;
   private width: number;
   private height: number;
   private htmlElement: HTMLElement;
 
-  constructor(private viewContainerRef: ViewContainerRef) {
-    this.htmlElement = viewContainerRef.element.nativeElement;
-    this.host = d3.select(viewContainerRef.nativeElement);
+  constructor() {
+    this.host = d3.select(this.container.nativeElement);
   }
 
   private setUp() : void {
