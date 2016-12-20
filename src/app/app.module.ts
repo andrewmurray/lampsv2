@@ -2,11 +2,13 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { Plans } from '../pages/plans/plans';
+import { DayDurationChart } from '../components/day-duration-chart';
 
 @NgModule({
   declarations: [
     MyApp,
-    Plans
+    Plans,
+    DayDurationChart
   ],
   imports: [
     IonicModule.forRoot(MyApp)
