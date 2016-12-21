@@ -9,6 +9,12 @@
 
 <ion-content padding>
   <ion-list>
-    <button ion-item type="button" name="button">Something here</button>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped(item)">
+      <p>
+        <span [ngClass]="{'plan-on': item.on, 'plan-off': !item.on}">{{item.on ? 'On' : 'Off'}}</span>
+        <span class="times"> {{item.start}} - {{item.end}}</span>
+      </p>
+      <p>{{item.pattern}}{{item.name ? ': ' + item.name : ''}}</p>
+    </button>
   </ion-list>
 </ion-content>
