@@ -17,6 +17,9 @@ export class Plans {
 
   }
 
+  addBtnTapped(event, item) {
+    this.navCtrl.push(EditPlan);
+  }
   itemTapped(event, item) {
     this.navCtrl.push(EditPlan, {item: item});
   }
